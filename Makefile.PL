@@ -15,7 +15,6 @@ $packageName = 'Business::BancaSella';
 #);
 
 %Requirements = (
-  'Class::MethodMaker'  => {},
   'URI::Escape'			=> {},
   'HTML::Entities'		=> {},
   'URI'					=> {},

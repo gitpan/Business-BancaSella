@@ -9,11 +9,16 @@
 BEGIN { $| = 1; print "1..1\n"; }
 END {print "not ok 1\n" unless $loaded;}
 use Business::BancaSella::Ris::File;
-
-$ric = new Business::BancaSella::Ris::File(file => 't/bsRis.txt');
-print $ric->check("aaaa") . "\n";
-die if (!$ric->check("aaaa"));
-#$ric->remove("aaaa");
+my $file = 't/bsRis.txt';
+$ric = new Business::BancaSella::Ris::File(file => $file);
+# open file to extract first password for checking
+open(F,$file) or die "Unable to open $file";
+my $password = <F>;chomp($password);
+close(F);
+print $ric->check($password) . "\n";
+die if (!$ric->check($password));
+$ric->remove($password);
+die if ($ric->check($password));
 
 
 $loaded = 1;

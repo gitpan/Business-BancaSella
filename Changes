@@ -1,5 +1,34 @@
 Revision history for Perl extension Business::BancaSella.
 
+0.11 (2002-01-17)
+=================
+- Removed library Class::MethodMaker from all classes. Now Class:MethodMaker 
+  is neither required nor optional library.
+- Changes library directory structure sorces to use CPAN standard structure.
+- Added Business::BancaSella::Ric::FileFast and 
+  Business::BancaSella::Ris::FileFast classes to use Ric and Ris ascii file
+  alphabetically sorted to improve key search and extract. This classes are 
+  written by Marco Gazerro, Mauro Fedele. This classes implements
+  a method "prepare" that create sorted ascii files from standand Banca Sella
+  ascii files (those used by Business::BancaSella::Ri*::File).
+- Created test files for Business::BancaSella::Ri*::FileFast.
+- Added prepare method to Business::BancaSella::Ri*::File that...don't do 
+  nothing :). Set it only for interface compatibility
+- Added extract method to Business::BancaSella::Ris::File that check password
+  and return false if not found, else remove password from OTP file.
+- Added prepare method to Business::BancaSella::Ri*::Mysql that appends otp
+  available in an ascii file into mysql table.
+- Added extract method to Business::BancaSella::Ris::Mysql that check password
+  and return false if not found, else remove password from OTP file.
+- Added documentation for Business::BancaSella::Ri*::FileFast.
+- Business::BancaSella::Ris::Mysql don't return an error if trying to remove
+  an unexistent otp. Added raise error.
+- Error calculating boolean method "result" in 
+  Business::BancaSella::Decode::Gateway
+- Business::BancaSella::Ric::File use the same algoritm for extract method than
+  Business::BancaSella::Ric::FileFast.
+- Business::BancaSella::Ris::File now use lock file when deleting ris password.
+
 0.10 (2002-01-08)
 =================
 - First CPAN available module.

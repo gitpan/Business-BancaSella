@@ -41,7 +41,10 @@ Business::BancaSella::Ric and Business::BancaSella::Ris. The first used for
 recovering keys need during comunications with Banca Sella and the other for 
 checking the autentication of keys sending from Banca Sella in the reply.
 
-Actually these keys could be stored in a file or in a table in a Mysql database.
+Actually these keys could be stored in a file, in a table in a Mysql database
+or in an improved ascii file well formatted to increase passwords 
+search speed. Thanks to Marco Gazerro <gazerro@open2b.com> for this 
+modules.
 
 For more information about this payment system or its functionality and for 
 opening an account for using it you can visit the Banca Sella home page 
@@ -57,7 +60,6 @@ Installation
 	- Perl version 5.005_03 or more recent.
 	- CPAN URI module.
 	- CPAN HTML::Entities module.
-	- CPAN Class::MethodMaker module.
 	- CPAN URI::Escape module.
 
 1.  Installation steps:
@@ -72,5 +74,5 @@ Disclaimer
 *** This is beta software -- use at your own risks ***
 
 --
-Bruni Emiliano (info@ebruni.it)
-2001-01-08
+Bruni Emiliano <info@ebruni.it>
+2002-01-16

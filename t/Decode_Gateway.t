@@ -11,12 +11,12 @@ END {print "not ok 1\n" unless $loaded;}
 use Business::BancaSella::Decode::Gateway;
 
 my $query_string =<<EOF;
-a=KO&b=12345&c=abcdef
+a=KO&b=12345&c=abcdef&d=12
 EOF
 
 $gpe	= new Business::BancaSella::Decode::Gateway('query_string' => $query_string);
 print $gpe->result . "\n";
-print $gpe->authcode . "\n";
+print $gpe->authcode . "\n" if($gpe->result);
 print $gpe->id . "\n";
 print $gpe->otp . "\n";
 
@@ -24,12 +24,12 @@ $loaded = 1;
 print "ok 1\n";
 
 $query_string =<<EOF;
-a=987&b=12345&c=abcdef
+a=987&b=12345&c=abcdef&d=12
 EOF
 
 $gpe	= new Business::BancaSella::Decode::Gateway('query_string' => $query_string);
 print $gpe->result . "\n";
-print $gpe->authcode . "\n";
+print $gpe->authcode . "\n" if($gpe->result);
 print $gpe->id . "\n";
 print $gpe->otp . "\n";
 

@@ -1,6 +1,7 @@
 =head1 NAME
 
-Business::BancaSella - A wrapper for Banca Sella online payment system (ver 0.10)
+Business::BancaSella - A wrapper for Banca Sella online payment system 
+(ver 0.11)
 
 =head1 SYNOPSIS
 
@@ -106,7 +107,7 @@ Gateway online system payment.
 
 =head2 Business::BancaSella::Encode
 
-Parent class for decoding systems
+Parent class for encoding systems
 
 =head2 Business::BancaSella::Encode::Gateway
 
@@ -116,17 +117,40 @@ Uri creator for Gateway online system payment.
 
 Uri creator for GestPay online system payment.
 
-=head2 Business::BancaSella::Ris
-
-=head2 Business::BancaSella::Ris::File
-
-=head2 Business::BancaSella::Ris::Mysql
-
 =head2 Business::BancaSella::Ric
+
+Parent class for extracting One-Time-Password from different storage place
 
 =head2 Business::BancaSella::Ric::File
 
+Extract One-Time-Password from a standard 
+Banca Sella ASCII file
+
+=head2 Business::BancaSella::Ric::FileFast
+
+Extract One-Time-Password from an improved ASCII file 
+
 =head2 Business::BancaSella::Ric::Mysql
+
+Extract One-Time-Password from a mysql database
+
+=head2 Business::BancaSella::Ris
+
+Parent class for checking One-Time-Password from different storage place
+
+=head2 Business::BancaSella::Ris::File
+
+Check the existance of One-Time-Password 
+in a standard Banca Sella ASCII file.
+
+=head2 Business::BancaSella::Ris::FileFast
+
+Check the existance of One-Time-Password 
+in an improved ASCII file.
+
+=head2 Business::BancaSella::Ris::Mysql
+
+Check the existance of One-Time-Password from a mysql database
 
 =head1  Prerequisites:
 
@@ -137,8 +161,6 @@ Uri creator for GestPay online system payment.
 =item * CPAN URI module.
 
 =item * CPAN HTML::Entities module.
-
-=item * CPAN Class::MethodMaker module.
 
 =item * CPAN URI::Escape module.
 
@@ -159,7 +181,10 @@ Bruni Emiliano, info@ebruni.it
 =head1 LICENSE
 
 Business::BancaSella - A wrapper for Banca Sella online payment system with Perl 
-Copyright (C) 2001 Bruni Emiliano (info@ebruni.it)
+Copyright (C) 2001-2002 Bruni Emiliano <info@ebruni.it>
+
+Business::BancaSella::Ric::FileFast and Business::BancaSella::Ris::FileFast
+are written by Marco Gazerro and Mauro Fedele.
 
 This module is free software; you can redistribute it and/or modify it under the terms of
 either:
@@ -190,11 +215,13 @@ not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Bo
   Business::BancaSella::Encode
   Business::BancaSella::Encode::Gateway
   Business::BancaSella::Encode::Gestpay
-  Business::BancaSella::Ris
-  Business::BancaSella::Ris::File
-  Business::BancaSella::Ris::Mysql
   Business::BancaSella::Ric
   Business::BancaSella::Ric::File
+  Business::BancaSella::Ric::FileFast
   Business::BancaSella::Ric::Mysql
+  Business::BancaSella::Ris
+  Business::BancaSella::Ris::File
+  Business::BancaSella::Ris::FileFast
+  Business::BancaSella::Ris::Mysql
 
 =cut
