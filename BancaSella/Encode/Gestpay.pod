@@ -9,12 +9,16 @@ Business::BancaSella::Encode::Gestpay - Uri creator for GestPay online system pa
   
   my $cgi 	= new CGI();	 
   my $bs	= new Business::BancaSella::Encode::Gestpay( 
-                    shopping	=> $your_shopping_id,
-                    amount	=> $the_amount,
-                    language	=> 'italian',
-                    currency	=> 'itl',
-                    otp		=> 'another_otp',
-                    id		=> 'internal_id'
+                    shopping	    => $your_shopping_id,
+                    amount	      => $the_amount,
+                    language	    => 'italian',
+                    currency	    => 'itl',
+                    otp		        => 'another_otp',
+                    id		        => 'internal_id',
+                    user_params   => {
+                                       USER_PARAM1  => 'value1',
+                                       USER_PARAM2  => 'value2'
+                                     }
                     );
   
   my $bsUrl	= $bs->uri;

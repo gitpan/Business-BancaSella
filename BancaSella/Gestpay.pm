@@ -1,6 +1,6 @@
 package Business::BancaSella::Gestpay;
 
-$VERSION = "0.11";
+$VERSION = "0.12";
 sub Version { $VERSION; }
 require 5.004;
 use strict;
@@ -9,17 +9,18 @@ use Carp;
 
 my %fields 	=
     (
-     shopping		=>		undef,
-     otp			=>		undef,
-     amount			=>		undef,
-     id				=>		undef,
-     currency		=> 		undef,
-     language		=> 		undef,
+     shopping			=>		undef,
+     otp					=>		undef,
+     amount				=>		undef,
+     id						=>		undef,
+     currency			=> 		undef,
+     language			=> 		undef,
      cardnumber		=> 		undef,
-     expmonth		=> 		undef,
-     expyear		=> 		undef,
-     name			=> 		undef,
-     mail			=> 		undef,
+     expmonth			=> 		undef,
+     expyear			=> 		undef,
+     name					=> 		undef,
+     mail					=> 		undef,
+     user_params 	=>		{},
      );
 
 sub new
@@ -56,6 +57,7 @@ sub expmonth { my $s=shift; return @_ ? ($s->{expmonth}=shift) : $s->{expmonth} 
 sub expyear { my $s=shift; return @_ ? ($s->{expyear}=shift) : $s->{expyear} }
 sub name { my $s=shift; return @_ ? ($s->{name}=shift) : $s->{name} }
 sub mail { my $s=shift; return @_ ? ($s->{mail}=shift) : $s->{mail} }
+sub user_params { my $s=shift; return @_ ? ($s->{user_params}=shift) : $s->{user_params} }
 
 sub uri { my $s=shift; return $s->{uri} }
 sub form { my $s=shift; return $s->{form} }

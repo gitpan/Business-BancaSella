@@ -11,7 +11,12 @@ GestPay online system payment.
   my $cgi 	= new CGI();
   my $qs	= $cgi->query_string;
   my $bs	= new Business::BancaSella::Decode::Gestpay(
-								'query_string' => $qs);
+								'query_string' => $qs,
+								'user_params'  => {
+								                    'USER_PARAM1'  => undef,
+								                    'USER_PARAM2'  => undef
+								                  }
+								);
 
 
 =head1 DESCRIPTION

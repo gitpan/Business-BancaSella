@@ -6,7 +6,7 @@ use URI;
 use Carp;
 
 
-$VERSION = "0.11";
+$VERSION = "0.12";
 sub Version { $VERSION; }
 require 5.004;
 use strict;
@@ -77,9 +77,17 @@ sub _split_uri {
 		my ($key,$value) 	= split(/=/,$_);
 		$b{$key}			= $value;
 	}
+	# assign default keys
 	foreach (keys %lbKeys) {
 		if (exists $b{$lbKeys{$_}}) {
 			$self->{$_}	= $b{$lbKeys{$_}};
+		} 
+	}
+	
+	# now we try to fill user personalized keys
+	foreach (keys %{$self->{user_params}}) {
+		if (exists $b{$_}) {
+			$self->{user_params}->{$_} = $b{$_}
 		}
 	}
 	

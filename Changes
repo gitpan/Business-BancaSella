@@ -1,5 +1,13 @@
 Revision history for Perl extension Business::BancaSella.
 
+0.12 (2003-07-24)
+=================
+- Changed Makefile.PL to check required modules.
+- Correct a problem while encoding Gestpay parameters
+- For Gestpay module we added possibility to define an hash of user personalized
+  key => value that it can be processed by Banca Sella as defined in the control 
+  panel of Banca Sella profile manager.
+
 0.11 (2002-01-17)
 =================
 - Removed library Class::MethodMaker from all classes. Now Class:MethodMaker 

@@ -138,14 +138,13 @@ check_mods( "You need to install the following module(s) to run the $packageName
 WriteMakefile(
     'NAME'		=> $packageName,
     'AUTHOR'		=> 'Emiliano Bruni <bruni\@micso.it>',
-    'VERSION_FROM'	=> 'BancaSella.pm', # finds $VERSION
-#    'PREREQ_PM'		=> {
-#    					Class::MethodMaker 	=> 0,
-#    					URI::Escape 		=> 0,
-#    					HTML::Entities 		=> 0,
-#    					URI			=> 0,
-#    					}, # e.g., Module::Name => 1.1
-#   'PMLIBDIRS'		=> ['Encode','Decode','Ris','Ric','Gestpay'],
+    'VERSION_FROM'	=> 'BancaSella.pm', # finds $VERSION,
+    'ABSTRACT_FROM'	=> 'BancaSella.pod',
+    'PREREQ_PM'		=> {
+    					URI::Escape 		=> 0,
+    					HTML::Entities 		=> 0,
+    					URI			=> 0,
+    					}, # e.g., Module::Name => 1.1
 
 );
 

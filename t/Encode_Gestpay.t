@@ -21,7 +21,11 @@ $gpe	= new Business::BancaSella::Encode::Gestpay(
 										expmonth	=> '05',
 										expyear		=> '2001',
 										name		=> 'Emiliano Bruni',
-										mail		=> 'bruni\@micso.it'
+										mail		=> 'bruni\@micso.it',
+										user_params => {
+														'PRODUCT_ID'	=> 512,
+														'PRODUCT_TYPE'	=> 'ADSL'
+														}
 										);
 print $gpe->uri . "\n";
 print $gpe->form . "\n";

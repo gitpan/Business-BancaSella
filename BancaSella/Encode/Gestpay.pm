@@ -6,7 +6,7 @@ use URI::Escape;
 use HTML::Entities;
 use Carp;
 
-$VERSION = "0.11";
+$VERSION = "0.12";
 
 
 my $bKeys = {
@@ -67,7 +67,7 @@ sub init {
 sub uri {
 	my $self 	= shift;
 	my $uri 	= 'a=' . $self->shopping . '&b=' . $self->getB;
-	$uri		= uri_escape($uri);
+	#$uri		= uri_escape($uri);
 	return  	$self->base_url . '?' . $uri;
 }
 
@@ -95,7 +95,12 @@ sub getB {
 			push @b,$bKeys->{$_} . '=' . $addValue;
 		}
 	}
-	return join('*P1*',@b);
+	# add user personal parameters
+	while (my ($key,$val) = each %{$self->{user_params}}) {
+		push @b, "$key=$val";
+	}
+	#return join('*P1*',@b);
+	return uri_escape(join('*P1*',@b));
 }
 
 sub valuta_encode {

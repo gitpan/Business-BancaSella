@@ -25,7 +25,8 @@ Using during: Encode
 
 =item amount
 
-The amount of the transaction expressed in Euro.
+The amount of the transaction. The currency is related to the value
+of currency method. Default is expressed in Euro.
 Using during: Encode
 
 =item id
@@ -49,6 +50,23 @@ Using during: Decode
 
 Authorization transaction Code
 Using during: Decode
+
+=item user_params
+
+It's a reference to hash of key => value user personalized parameters like 
+defined in the control panel of Banca Sella profile manager.
+
+=item currency
+
+It can assume values "eur" of "itl" for the EURO currency or for the old italian
+lire currency. Default value is "eur".
+
+=item anguage
+
+Set the language of the Banca Sella response pages. It can be set to one of this
+values: "italian", "french", "spanish" or "english". Default is "italian".
+
+=item 
 
 =back
 

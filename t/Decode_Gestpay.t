@@ -11,12 +11,18 @@ END {print "not ok 1\n" unless $loaded;}
 use Business::BancaSella::Decode::Gestpay;
 
 my $query_string =<<EOF;
-a=9000000&b=PAY1_UICCODE=242*P1*PAY1_AMOUNT=1234.56
+a=9000000&b=PAY1_UICCODE=242*P1*PAY1_AMOUNT=1234.56*P1*PRODUCT_ID%3D512*P1*PRODUCT_TYPE%3DADSL
 EOF
 
-$gpe	= new Business::BancaSella::Decode::Gestpay('query_string' => $query_string);
+$gpe	= new Business::BancaSella::Decode::Gestpay('query_string' => $query_string,
+													'user_params' => {
+																		'PRODUCT_ID' => undef,
+																		'PRODUCT_TYPE' => undef,
+																		});
 print $gpe->shopping . "\n";
 print $gpe->amount . "\n";
+print $gpe->user_params->{PRODUCT_ID} . "\n";
+print $gpe->user_params->{PRODUCT_TYPE} . "\n";
 
 $loaded = 1;
 print "ok 1\n";
