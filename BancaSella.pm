@@ -1,7 +1,7 @@
 package Business::BancaSella;
 
 
-$VERSION = "0.12";
+$VERSION = "0.13";
 sub Version { $VERSION; }
 require 5.004;
 use strict;

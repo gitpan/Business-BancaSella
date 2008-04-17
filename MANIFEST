@@ -57,3 +57,4 @@ t/Ris_FileFast.t
 t/bsRic.txt
 t/bsRis.txt
 t/simple.t
+META.yml                                 Module meta-data (added by MakeMaker)

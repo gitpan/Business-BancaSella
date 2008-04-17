@@ -1,5 +1,9 @@
 Revision history for Perl extension Business::BancaSella.
 
+0.12 (2008-04-18)
+=================
+- Add support for US Dollar and others.
+
 0.12 (2003-07-24)
 =================
 - Changed Makefile.PL to check required modules.

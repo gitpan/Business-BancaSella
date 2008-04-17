@@ -6,7 +6,7 @@ use URI::Escape;
 use HTML::Entities;
 use Carp;
 
-$VERSION = "0.12";
+$VERSION = "0.13";
 
 
 my $bKeys = {
@@ -107,7 +107,12 @@ sub valuta_encode {
 	my $valuta	= lc(shift);
 	my %vd		= (
 					'eur'	=> 242,
-					'itl'	=> 18
+					'itl'	=> 18,
+					'usd'	=> 1,
+					'uk' 	=> 2,
+					'yen'	=> 71,
+					'hkd' => 103,
+					'real' => 234
 				);
 	die "Unable to encode you currency '$valuta'" if (!exists $vd{$valuta});
 	return $vd{$valuta};
